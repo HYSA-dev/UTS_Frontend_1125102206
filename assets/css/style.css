@@ -1,0 +1,275 @@
+/* Reset Basic */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+  background-color: #0f0d0e; /* Earthy Dark Moka */
+  color: #f3f4f6;
+  min-height: 100vh;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1100px; /* Diperlebar agar pas untuk Dashboard 2 Kolom */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header */
+.app-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fcfbf9;
+  letter-spacing: -0.02em;
+}
+
+.app-header .subtitle {
+  font-size: 0.85rem;
+  color: #a39e93;
+  margin-top: 4px;
+}
+
+/* Header dengan Logo */
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Jarak antara logo dan judul */
+}
+
+.app-logo {
+  width: 55px; /* Ukuran yang pas untuk mobile & desktop */
+  height: 55px;
+  object-fit: contain;
+}
+
+/* Layout Grid Dashboard (Desktop Default) */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr; /* Kolom Kiri Kunci Form, Kolom Kanan Tabel */
+  gap: 20px;
+  align-items: start;
+}
+
+.left-panel,
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card Container */
+.card {
+  background: #171412; /* Espresso Gelap */
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #2a2420;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #f3f4f6;
+}
+
+/* Stat Card Total Luas */
+.stat-card {
+  background: linear-gradient(135deg, #1e1916, #120f0d);
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1px solid #382d26;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #a39e93;
+  display: block;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #22c55e; /* Accent Hijau Daun */
+}
+
+/* Form Styling */
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #d1d5db;
+}
+
+.form-group input,
+.form-group select,
+.search-box {
+  background: #221c18;
+  border: 1px solid #382d26;
+  color: #f9fafb;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.search-box:focus {
+  border-color: #22c55e;
+}
+
+.btn-primary {
+  background: #15803d; /* Hijau Agrikultur */
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #166534;
+}
+
+/* Alert Box */
+.alert-box {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #221c18;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  border: 1px solid #382d26;
+}
+
+/* Table Styling */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.table-header h2 {
+  margin-bottom: 0;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 200px;
+  font-size: 0.82rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+th {
+  text-align: left;
+  padding: 10px;
+  font-size: 0.75rem;
+  color: #a39e93;
+  border-bottom: 1px solid #2a2420;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #1f1a17;
+  color: #e5e7eb;
+}
+
+/* Badges & Tags */
+.badge {
+  background: #14532d;
+  color: #4ade80;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  border: 1px solid #166534;
+}
+
+.status-tag {
+  background: #27201b;
+  color: #eab308;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  border: 1px solid #44372e;
+}
+
+/* Tombol Hapus Tabel */
+.btn-delete {
+  background: #7f1d1d;
+  color: #fca5a5;
+  border: 1px solid #991b1b;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+  background: #991b1b;
+  color: #ffffff;
+}
+
+/* Responsive Media Query untuk Layar Tablet/HP */
+@media (max-width: 850px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr; /* Kembali ke 1 kolom di HP */
+  }
+}
+
+@media (max-width: 850px) {
+  .header-content {
+    flex-direction: column; /* Ubah ke vertikal (atas-bawah) */
+    align-items: center;    /* Ratakan ke tengah secara horizontal */
+    text-align: center;     /* Teks judul & subtitle jadi rata tengah */
+    gap: 10px;              /* Jarak logo ke teks judul */
+  }
+  
+  .app-logo {
+    width: 60px;            /* Logo sedikit lebih jelas di tengah HP */
+    height: 60px;
+  }
+}

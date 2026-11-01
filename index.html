@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Manajemen Data Lahan & Tanaman - UTS Frontend</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Header Aplikasi -->
+      <header class="app-header">
+        <div class="header-content">
+          <img
+            src="assets/img/logo.jpg"
+            alt="Logo Lahan & Tanaman"
+            class="app-logo"
+          />
+          <div>
+            <h1>Sistem Manajemen Data Lahan & Tanaman</h1>
+            <p class="subtitle">
+              Platform Pengelolaan Sawah & Perkebunan Digital (NIM: 1125102206)
+            </p>
+          </div>
+        </div>
+      </header>
+      <!-- Dashboard Grid 2 Kolom -->
+      <div class="dashboard-grid">
+        <!-- Panel Kiri: Stat Card & Form -->
+        <div class="left-panel">
+          <section class="stat-card">
+            <div class="stat-info">
+              <span class="stat-label">Total Akumulasi Luas Lahan</span>
+              <span id="total-luas-display" class="stat-value">0 m²</span>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2>Tambah Data Lahan Baru</h2>
+            <div id="form-alert" class="alert-box" style="display: none"></div>
+
+            <form id="form-lahan" class="form-grid">
+              <div class="form-group">
+                <label for="namaLahan">Nama Lahan / Blok</label>
+                <input
+                  type="text"
+                  id="namaLahan"
+                  placeholder="Contoh: Lahan Blok Argopuro"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="jenisTanaman">Jenis Tanaman</label>
+                <input
+                  type="text"
+                  id="jenisTanaman"
+                  placeholder="Contoh: Padi Organik / Kopi"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="luasLahan">Luas Lahan (m²)</label>
+                <input
+                  type="number"
+                  id="luasLahan"
+                  placeholder="Contoh: 1500"
+                  />
+              </div>
+
+              <div class="form-group">
+                <label for="statusPanen">Status Lahan</label>
+                <select id="statusPanen">
+                  <option value="">-- Pilih Status --</option>
+                  <option value="Masa Tanam">Masa Tanam</option>
+                  <option value="Perawatan">Perawatan</option>
+                  <option value="Siap Panen">Siap Panen</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn-primary">
+                Simpan Data Lahan
+              </button>
+            </form>
+          </section>
+        </div>
+
+        <!-- Panel Kanan: Tabel Data -->
+        <div class="right-panel">
+          <section class="card">
+            <div class="table-header">
+              <h2>Daftar Inventaris Lahan</h2>
+              <input
+                type="text"
+                id="search-input"
+                class="search-box"
+                placeholder="Cari lahan atau tanaman..."
+              />
+            </div>
+
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nama Lahan</th>
+                    <th>Jenis Tanaman</th>
+                    <th>Luas (m²)</th>
+                    <th>Status</th>
+                    <th>AKSI</th>
+                  </tr>
+                </thead>
+                <tbody id="lahan-table-body"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>
